@@ -26,23 +26,10 @@ print(is_element(root, 1))
 
 #1. Zdefniuj funkcję, która dla danego drzewa zwróci ilość węzłów. 
 
-def how_many(root):
-   if root.left == None and root.right == None:
-      return 1 
-   else:
-      return how_many(root.left) + how_many(root.right) + 1 
 
 
  #2. Sprawdź, czy drzewo jest w równowadze (globalnie).  
-def is_balanced(root):
-   if root.left == None and root.right == None:
-      return True
-   else:
-      return abs(how_many(root.left) - how_many(root.right)) <= 1
+
 
  #3. Sprawdź, czy drzewo jest w równowadze (lokalnie).   
-def subtree_balanced(root):
-   if root.left == None and root.right == None:
-      return True
-   else:
-      return is_balanced(root) and subtree_balanced(root.left) and subtree_balanced(root.right)
+
