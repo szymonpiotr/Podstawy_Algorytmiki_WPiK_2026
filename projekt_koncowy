@@ -31,8 +31,7 @@
 # listę elementów niespełniających podanego predykatu (predykat to dowolna funkkcja
 # zwracająca wartość boolowską).
 # Użyj rekurencji ogonowej (rekurencji z dodatkowym parametrem).
-# Działanie: partitionList(lambda x: x < 3, [1,2,3,4,5,6], []) = [1,2]
-# Działanie: print(partitionList(lambda x: x != x, [1,2,3,4,5,6], [])) = []
+# Działanie: partitionList(lambda x: x < 3, [1,2,3,4,5,6], []) = [3,4,5,6]
 # def partitionList(function, list, results):
 
 
