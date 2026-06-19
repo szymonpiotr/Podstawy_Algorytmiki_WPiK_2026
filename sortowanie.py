@@ -66,4 +66,16 @@ def pascal(wiersz, kolumna):
 # 5. Zdefiniuj funkcję "balance", która sprawdza, czy w danym Stringu nawiasy są ustawione w 
 # prawidłowy sposób, tj. czy każde lewy nawias ma swój prawy nawias do pary i czy są one dobrze ustawione.
 
+def balanced(string, open): 
+    if (string == ""):
+        return open == 0
+    else:
+        if (string[0] == '('): 
+            return balanced(string[1:], open + 1)
+        else:
+            if (string[0] == ')'): 
+                return open > 0 and balanced(string[1:], open - 1)
+            else:
+                return balanced(string[1:], open)
+
 
