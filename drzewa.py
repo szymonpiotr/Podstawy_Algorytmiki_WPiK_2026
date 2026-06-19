@@ -34,8 +34,18 @@ def how_many(root):
 
 
 
- #2. Sprawdź, czy drzewo jest w równowadze (globalnie).  
-
+#2. Sprawdź, czy drzewo jest w równowadze (globalnie).  
+def is_balanced(root):
+   if root.left == None and root.right == None:
+      return True
+   else:
+      return abs(how_many(root.left) - how_many(root.right)) <= 1
 
  #3. Sprawdź, czy drzewo jest w równowadze (lokalnie).   
+def subtree_balanced(root):
+   if root.left == None and root.right == None:
+      return True
+   else:
+      return is_balanced(root) and subtree_balanced(root.left) and subtree_balanced(root.right)
+
 
