@@ -1,1 +1,78 @@
+# W kilku zadaniach poniżej pojawiają się się wyrażenia typu "lambda x: x+2".
+# Jest to bardzo skrótowe zapisanie funkcji, której argument jest po lewej stronie
+# znaku ":" (u nas x) a po prawej stronie znajduje się to, co się z tym argumentem dzieje ("x+2").
+# Taka notacja skraca metodę "def". Pozwala nie nazywać funckji, która jest użyta np. do testów. 
 
+
+# ITERACJA
+# Zadanie 1: Zdefiniuj funkcję countRepeated(list), która zwraca liczbę elementów,
+# które występują w liście więcej niż jeden raz.
+# Użyj iteracji.
+# Działanie:
+# countRepeated([1,2,2,3,4,4,5]) = 2 (bo 2 i 4 występują wielokrotnie)
+# def countRepeated(list):
+
+# REKURENCJA
+# Zadanie 2: Zdefiniuj funkcję mergeAlternately(list1, list2), która tworzy nową listę
+# poprzez naprzemienne pobieranie elementów z obu list.
+# Jeśli jedna lista się skończy, dodaj pozostałe elementy drugiej listy.
+# Użyj rekurencji.
+# Działanie:
+# mergeAlternately([1,2], ['a','b','c','d']) = [1,'a',2,'b','c','d']
+# def mergeAlternately(list1, list2):
+
+# Zadanie 3: Zdefiniuj funkcję applySum(function, list), która zwraca sumę wartości
+# otrzymanych po zastosowaniu funkcji do każdego elementu listy. Użyj rekurencji:
+# Działanie: applySum(lambda x: x+1, [1,2,3]) = 9 (bo 2+3+4)
+# def applySum(function, list):
+
+# REKURENCJA OGONOWA
+# Zadanie 4: Zdefiniuj funkcję partitionList(predicate, list, results), która zwraca
+# listę elementów niespełniających podanego predykatu (predykat to dowolna funkkcja
+# zwracająca wartość boolowską).
+# Użyj rekurencji ogonowej (rekurencji z dodatkowym parametrem).
+# Działanie: partitionList(lambda x: x < 3, [1,2,3,4,5,6], []) = [1,2]
+# Działanie: print(partitionList(lambda x: x != x, [1,2,3,4,5,6], [])) = []
+# def partitionList(function, list, results):
+
+
+
+
+# DRZEWA i REKURENCJA
+
+class Node:                  # klasa drzew z maksymalnie dwoma rozgałęzieniami
+   def __init__(self, data): # każdy node/węzeł ma w sobie jakąś wartość (np. liczbę)
+      self.data = data       # którą można odzyskać metodą .data
+      self.left = None       # ma też lewe poddrzewo
+      self.right = None      # oraz prawe poddrzewo
+
+# przykład drzewa binarnego
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.right.left = Node(4)
+root.right.right = Node(5)
+root.right.right.left = Node(6)
+root.right.right.right = Node(7)
+
+class RoseNode:              # klasa rose trees
+    def __init__(self,data): # każdy node/węzeł ma w sobie jakąś wartość (np. liczbę)
+      self.data = data       # którą można odzyskać metodą .data
+      self.subtrees = []     # oraz listę poddrzew.
+
+# przykład rose tree
+root1 = RoseNode(1)
+root2 = RoseNode(2)
+root1.subtrees = [root2,  RoseNode(3), RoseNode(4)]
+root2.subtrees = [RoseNode(5), RoseNode(6)]
+
+# Zadanie 5: Zdefiniuj funkcję treeSum(tree), która dla drzewa binarnego
+# zwraca sumę wszystkich wartości w węzłach.
+# Działanie: treeSum(root) = 28
+# def treeSum(tree):
+
+
+# Zadanie dodatkowe: Zdefiniuj funkcję treeSumRose(tree), która dla drzewa typu RoseNode
+# zwraca sumę wszystkich wartości węzłów.
+# Działanie: treeSumRose(root1) = 21
+# def treeSumRose(tree):
